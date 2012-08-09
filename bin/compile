@@ -195,7 +195,8 @@ source $BIN_DIR/steps/pylibmc
 
 # Sass
 echo "LOC: $VIRTUALENV_LOC"
-GEM_HOME="$VIRTUALENV_LOC/gems"
+#GEM_HOME="$VIRTUALENV_LOC/gems"
+GEM_HOME="$VIRTUALENV_LOC"
 GEM_PATH=""
 echo "GH: $GEM_HOME"
 echo "GP: $GEM_PATH"
