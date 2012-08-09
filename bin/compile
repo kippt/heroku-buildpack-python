@@ -194,10 +194,12 @@ set -e
 source $BIN_DIR/steps/pylibmc
 
 # Sass
-echo "LOC: $VIRTUALENV_LOC"
-#GEM_HOME="$VIRTUALENV_LOC/gems"
-GEM_HOME="$VIRTUALENV_LOC"
+GEM_HOME="$VIRTUALENV_LOC/gems"
 GEM_PATH=""
+set-default-env GEM_HOME "$GEM_HOME"
+set-default-env GEM_PATH "$GEM_PATH"
+
+echo "LOC: $VIRTUALENV_LOC"
 echo "GH: $GEM_HOME"
 echo "GP: $GEM_PATH"
 
