@@ -198,6 +198,9 @@ echo "LOC:"
 echo $VIRTUALENV_LOC
 set-env GEM_HOME '$VIRTUALENV_LOC/gems'
 set-env GEM_PATH ''
+mkdir -p $GEM_HOME
+echo "GH: $GEM_HOME"
+echo "GP: $GEM_PATH"
 gem install sass
 
 # Activate the Virtualenv.
