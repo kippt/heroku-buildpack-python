@@ -6,6 +6,8 @@ It uses [virtualenv](http://www.virtualenv.org/) and [pip](http://www.pip-instal
 
 [![Build Status](https://secure.travis-ci.org/heroku/heroku-buildpack-python.png?branch=master)](http://travis-ci.org/heroku/heroku-buildpack-python)
 
+Kippt additions: binaries for Sass, Coffeescript and Handlebars.
+
 Usage
 -----
 
