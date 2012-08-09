@@ -201,7 +201,7 @@ echo "GH: $GEM_HOME"
 echo "GP: $GEM_PATH"
 
 mkdir -p $GEM_HOME
-gem install sass
+gem install -i $GEM_HOME sass
 
 # Activate the Virtualenv.
 puts-step "Activating virtualenv"
