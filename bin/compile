@@ -194,8 +194,11 @@ set -e
 source $BIN_DIR/steps/pylibmc
 
 # Sass
+echo "LOC:"
+echo $VIRTUALENV_LOC
+set-env GEM_HOME '$VIRTUALENV_LOC/gems'
+set-env GEM_PATH ''
 gem install sass
-#source $BIN_DIR/steps/sass
 
 # Activate the Virtualenv.
 puts-step "Activating virtualenv"
@@ -240,7 +243,7 @@ done
 
 # Set context environment variables.
 
-set-env PATH '$HOME/.heroku/venv/bin:$PATH'
+set-env PATH '$HOME/.heroku/venv/bin:$PATH:$GEM_HOME/bin'
 set-default-env PYTHONUNBUFFERED true
 set-default-env LIBRARY_PATH /app/.heroku/vendor/lib
 set-default-env LD_LIBRARY_PATH /app/.heroku/vendor/lib
