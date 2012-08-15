@@ -196,13 +196,6 @@ source $BIN_DIR/steps/pylibmc
 # Sass
 GEM_HOME="$VIRTUALENV_LOC/gems"
 GEM_PATH=""
-set-default-env GEM_HOME "$GEM_HOME"
-set-default-env GEM_PATH "$GEM_PATH"
-
-echo "LOC: $VIRTUALENV_LOC"
-echo "GH: $GEM_HOME"
-echo "GP: $GEM_PATH"
-
 mkdir -p $GEM_HOME
 gem install -i $GEM_HOME sass
 
@@ -249,7 +242,7 @@ done
 
 # Set context environment variables.
 
-set-env PATH '$HOME/.heroku/venv/bin:$PATH:$GEM_HOME/bin'
+set-env PATH '$HOME/.heroku/venv/bin:$PATH'
 set-default-env PYTHONUNBUFFERED true
 set-default-env LIBRARY_PATH /app/.heroku/vendor/lib
 set-default-env LD_LIBRARY_PATH /app/.heroku/vendor/lib
