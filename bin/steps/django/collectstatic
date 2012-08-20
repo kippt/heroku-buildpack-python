@@ -9,6 +9,7 @@ indent() {
 }
 
 # Check if collectstatic is configured properly.
+echo BLAAAA
 ENVIRONMENT=production python $MANAGE_FILE collectstatic --dry-run --noinput &> /dev/null && RUN_COLLECTSTATIC=true
 
 # Compile assets if collectstatic appears to be kosher.
