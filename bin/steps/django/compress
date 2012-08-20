@@ -7,7 +7,7 @@ indent() {
 }
 
 echo "-----> Collecting static files"
-ENVIRONMENT=production python $MANAGE_FILE compress --noinput  2>&1 | indent
+ENVIRONMENT=production python $MANAGE_FILE compress 2>&1 | indent
 
 [ $? -ne 0 ] && {
     echo " !     Error running manage.py compress"
