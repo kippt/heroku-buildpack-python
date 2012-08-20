@@ -13,6 +13,7 @@ export GEM_HOME=/app/.heroku/venv/gems
 export GEM_PATH=
 
 echo "-----> Collecting static files"
+sh .heroku/venv/bin/activate
 ENVIRONMENT=production python $MANAGE_FILE compress 2>&1 | indent
 
 [ $? -ne 0 ] && {
