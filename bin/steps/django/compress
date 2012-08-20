@@ -8,6 +8,10 @@ indent() {
   [ $(uname) == "Darwin" ] && sed -l "$RE" || sed -u "$RE"
 }
 
+PATH=/app/.heroku/venv/bin:/bin:/usr/local/bin:/usr/bin:/app/bin
+GEM_HOME=/app/.heroku/venv/gems
+GEM_PATH=
+
 echo "-----> Collecting static files"
 ENVIRONMENT=production python $MANAGE_FILE compress 2>&1 | indent
 
