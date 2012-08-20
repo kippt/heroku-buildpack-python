@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Syntax sugar.
+indent() {
+  RE="s/^/       /"
+  [ $(uname) == "Darwin" ] && sed -l "$RE" || sed -u "$RE"
+}
+
+echo "-----> Collecting static files"
+ENVIRONMENT=production python $MANAGE_FILE compress --noinput  2>&1 | indent
+
+[ $? -ne 0 ] && {
+    echo " !     Error running manage.py compress"
+}
+
+echo
+

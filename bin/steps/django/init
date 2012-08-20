@@ -30,3 +30,5 @@ if [ ! "$DISABLE_COLLECTSTATIC" ]; then
     source $BIN_DIR/steps/django/collectstatic
 fi
 
+source $BIN_DIR/steps/django/compress
+
