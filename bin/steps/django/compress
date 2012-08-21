@@ -8,13 +8,16 @@
   #[ $(uname) == "Darwin" ] && sed -l "$RE" || sed -u "$RE"
 #}
 
-#export PATH=/app/.heroku/venv/bin:/bin:/usr/local/bin:/usr/bin:/app/bin
-#export GEM_HOME=/app/.heroku/venv/gems
-#export GEM_PATH=
+export PATH=$PATH:$BUILD_DIR/bin
+export GEM_HOME=$BUILD_DIR/.heroku/venv/gems
+export GEM_PATH=
 
-#echo "-----> Collecting static files"
+echo 'ENV:'
+env
+
+echo "-----> Collecting static files"
 #sh .heroku/venv/bin/activate
-#ENVIRONMENT=production python $MANAGE_FILE compress 2>&1 | indent
+ENVIRONMENT=production python $MANAGE_FILE compress 2>&1 | indent
 
 #[ $? -ne 0 ] && {
     #echo " !     Error running manage.py compress"
