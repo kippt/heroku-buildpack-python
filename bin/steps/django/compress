@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
-set +e
+#set +e
 
-# Syntax sugar.
-indent() {
-  RE="s/^/       /"
-  [ $(uname) == "Darwin" ] && sed -l "$RE" || sed -u "$RE"
-}
+## Syntax sugar.
+#indent() {
+  #RE="s/^/       /"
+  #[ $(uname) == "Darwin" ] && sed -l "$RE" || sed -u "$RE"
+#}
 
-export PATH=/app/.heroku/venv/bin:/bin:/usr/local/bin:/usr/bin:/app/bin
-export GEM_HOME=/app/.heroku/venv/gems
-export GEM_PATH=
+#export PATH=/app/.heroku/venv/bin:/bin:/usr/local/bin:/usr/bin:/app/bin
+#export GEM_HOME=/app/.heroku/venv/gems
+#export GEM_PATH=
 
-echo "-----> Collecting static files"
-sh .heroku/venv/bin/activate
-ENVIRONMENT=production python $MANAGE_FILE compress 2>&1 | indent
+#echo "-----> Collecting static files"
+#sh .heroku/venv/bin/activate
+#ENVIRONMENT=production python $MANAGE_FILE compress 2>&1 | indent
 
-[ $? -ne 0 ] && {
-    echo " !     Error running manage.py compress"
-}
+#[ $? -ne 0 ] && {
+    #echo " !     Error running manage.py compress"
+#}
 
-echo
+#echo
 
